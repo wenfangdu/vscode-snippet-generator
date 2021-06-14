@@ -2,7 +2,7 @@
   "name": "snippet-generator",
   "displayName": "Snippet Generator",
   "description": "📜 Snippet generator for VSCode",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -16,7 +16,20 @@
   "categories": [
     "Programming Languages",
     "Snippets",
-    "Other"
+    "Linters",
+    "Themes",
+    "Debuggers",
+    "Formatters",
+    "Keymaps",
+    "SCM Providers",
+    "Other",
+    "Extension Packs",
+    "Language Packs",
+    "Data Science",
+    "Machine Learning",
+    "Visualization",
+    "Notebooks",
+    "Education"
   ],
   "activationEvents": [
     "onCommand:snippet-generator.generateSnippet"
