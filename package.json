@@ -2,7 +2,7 @@
   "name": "snippet-generator",
   "displayName": "Snippet Generator",
   "description": "📜 Snippet generator for VSCode",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
