@@ -14,6 +14,6 @@ Command: `Generate Snippet`
 
 ## Inspired By
 
-- [Johnson Chu](https://github.com/johnsoncodehk)'s [comment](https://github.com/johnsoncodehk/volar/issues/183#issuecomment-842804053)
-- [snippet generator](https://snippet-generator.app/)
+- [Johnson Chu's comment](https://github.com/johnsoncodehk/volar/issues/183#issuecomment-842804053)
+- [snippet-generator.app](https://snippet-generator.app/)
 - [VS Code Snippet Generator](https://marketplace.visualstudio.com/items?itemName=dkultasev.vs-code-snippet-generator)
