@@ -2,7 +2,7 @@
   "name": "snippet-generator",
   "displayName": "Snippet Generator",
   "description": "📜 Snippet generator for VSCode",
-  "version": "0.2.14",
+  "version": "0.2.16",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -30,6 +30,28 @@
     "Visualization",
     "Notebooks",
     "Education"
+  ],
+  "keywords": [
+    "code",
+    "conversion",
+    "convert",
+    "converter",
+    "description",
+    "fast",
+    "generate",
+    "generator",
+    "json",
+    "prefix",
+    "productivity",
+    "quick",
+    "rapid",
+    "scaffold",
+    "scope",
+    "shortcut",
+    "snippet",
+    "tab",
+    "util",
+    "utility"
   ],
   "activationEvents": [
     "onCommand:snippet-generator.generateSnippet"
