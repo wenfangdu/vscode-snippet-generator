@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/wenfangdu/vscode-snippet-generator?color=brightgreen)](https://github.com/wenfangdu/vscode-snippet-generator/blob/main/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.snippet-generator)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.snippet-generator)
 
-> 📜 Snippet generator for VSCode
+> 📜 Generate snippets from code in VSCode
 
 [💿 Install Via Marketplace](https://marketplace.visualstudio.com/items?itemName=wenfangdu.snippet-generator)
 

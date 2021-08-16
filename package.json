@@ -1,8 +1,8 @@
 {
   "name": "snippet-generator",
   "displayName": "Snippet Generator",
-  "description": "📜 Snippet generator for VSCode",
-  "version": "0.2.18",
+  "description": "📜 Generate snippets from code in VSCode",
+  "version": "0.2.20",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "scope",
     "shortcut",
     "snippet",
+    "snippets",
     "tab",
     "util",
     "utility"
