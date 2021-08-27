@@ -3,7 +3,7 @@
 const { commands, window, workspace, env } = require('vscode')
 
 exports.activate = ({ subscriptions }) => {
-  const disposable = commands.registerCommand('snippet-generator.generateSnippet', async () => {
+  const disposable = commands.registerCommand('snippet-generator.generate-snippet', async () => {
     const editor = window.activeTextEditor
 
     if (!editor) {
