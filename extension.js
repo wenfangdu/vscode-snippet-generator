@@ -58,7 +58,9 @@ exports.activate = ({ subscriptions }) => {
       [name]: {
         ...(scope && { scope }),
         prefix,
-        body: selection.split(/\r?\n/).map(line => line.replace(spaces, '\t')),
+        body: selection
+          .split(/\r?\n/)
+          .map(line => line.replace(/\$(?![\d{])/g, '\\$').replace(spaces, '\t')),
         ...(description && { description }),
       },
     }
