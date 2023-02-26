@@ -1,7 +1,8 @@
 # Snippet Generator
 
-[![Version](https://vsmarketplacebadge.apphb.com/version-short/wenfangdu.snippet-generator.svg)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.snippet-generator)
+[![Version](https://img.shields.io/visual-studio-marketplace/v/wenfangdu.snippet-generator?color=blue)](https://marketplace.visualstudio.com/items?itemName=wenfangdu.snippet-generator)
 [![License](https://img.shields.io/github/license/wenfangdu/vscode-snippet-generator?color=brightgreen)](https://github.com/wenfangdu/vscode-snippet-generator/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blueviolet.svg)](https://github.com/wenfangdu/vscode-snippet-generator)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.snippet-generator)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dwenfangdu.snippet-generator)
 
 > 📜 Generate snippets from code in VSCode
