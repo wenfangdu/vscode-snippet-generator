@@ -60,7 +60,7 @@ exports.activate = ({ subscriptions }) => {
         prefix,
         body: selection
           .split(/\r?\n/)
-          .map(line => line.replace(/\$(?![\d{])/g, '\\$').replace(spaces, '\t')),
+          .map(line => line.replace(/\$(?![\d{]|TM_)/g, '\\$').replace(spaces, '\t')),
         ...(description && { description }),
       },
     }
