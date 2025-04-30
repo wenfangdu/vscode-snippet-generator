@@ -7,82 +7,77 @@
     "icon": "images/icon.png",
     "license": "MIT",
     "repository": {
-      "type": "git",
-      "url": "https://github.com/wenfangdu/vscode-snippet-generator"
+        "type": "git",
+        "url": "https://github.com/wenfangdu/vscode-snippet-generator"
     },
     "engines": {
-      "vscode": "^1.74.0"
+        "vscode": "^1.74.0"
     },
     "categories": [
-      "Programming Languages",
-      "Snippets"
+        "Programming Languages",
+        "Snippets"
     ],
     "keywords": [
-      "code",
-      "conversion",
-      "convert",
-      "converter",
-      "create",
-      "creator",
-      "description",
-      "fast",
-      "generate",
-      "generator",
-      "json",
-      "prefix",
-      "productivity",
-      "quick",
-      "rapid",
-      "scaffold",
-      "scope",
-      "shortcut",
-      "snippet",
-      "snippets",
-      "tab",
-      "util",
-      "utility"
+        "code",
+        "conversion",
+        "convert",
+        "converter",
+        "create",
+        "creator",
+        "description",
+        "fast",
+        "generate",
+        "generator",
+        "json",
+        "prefix",
+        "productivity",
+        "quick",
+        "rapid",
+        "scaffold",
+        "scope",
+        "shortcut",
+        "snippet",
+        "snippets",
+        "tab",
+        "util",
+        "utility"
     ],
     "main": "./extension.js",
     "contributes": {
-      "commands": [
-        {
-          "command": "snippet-generator.generate-snippet",
-          "title": "Generate Snippet"
+        "commands": [
+            {
+                "command": "snippet-generator.generate-snippet",
+                "title": "Generate Snippet"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Snippet Generator",
+            "properties": {
+                "snippet-generator.doNotEscapeSpecialVariables": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Do not escape special snippet variables that follow the syntax of '$name', '${name:somevalue}', or '$TM_SELECTED_TEXT'."
+                }
+            }
         }
-      ],
-      "configuration": {
-          "type": "object",
-          "title": "Snippet Generator",
-          "properties": {
-              "snippet-generator.doNotEscapeSpecialVariables": {
-                  "type":"boolean",
-                  "default": true,
-                  "description": "Recognize and do not escape special snippet variables."
-              }
-          }
-      },
-      "configurationDefaults": {
-          "[powershell]": {
-              "snippet-generator.doNotEscapeSpecialVariables": false
-          }
-      }
     },
     "scripts": {
-      "lint": "eslint .",
-      "pretest": "npm run lint",
-      "test": "node ./test/runTest.js",
-      "package": "mkdir build && vsce package -o ./build/vscode-snippet-generator.vsix",
-      "vscode:prepublish": "npm install"
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "node ./test/runTest.js",
+        "package": "mkdir build && vsce package -o ./build/vscode-snippet-generator.vsix",
+        "vscode:prepublish": "npm install"
     },
     "devDependencies": {
-      "@types/glob": "^7.1.4",
-      "@types/mocha": "^8.2.3",
-      "@types/node": "14.x",
-      "@types/vscode": "^1.74.0",
-      "eslint": "^7.32.0",
-      "glob": "^7.1.7",
-      "mocha": "^8.4.0",
-      "typescript": "^4.4.2",
-      "vscode-test": "^1.6.1"
+        "@types/glob": "^7.1.4",
+        "@types/mocha": "^8.2.3",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.74.0",
+        "eslint": "^7.32.0",
+        "glob": "^7.1.7",
+        "mocha": "^8.4.0",
+        "typescript": "^4.4.2",
+        "vscode-test": "^1.6.1"
     }
-  }
+}
