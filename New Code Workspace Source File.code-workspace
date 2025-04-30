@@ -1,0 +1,53 @@
+{
+    // ${userHome}				 Path to the user's home folder
+    // ${workspaceFolder}		  Path to the folder opened in VS Code
+    // ${workspaceFolderBasename}  Name of the folder opened in VS Code without Slashes.
+    // ${file}					 Opened file
+    // ${fileWorkspaceFolder}	  Opened file's workspace folder
+    // ${relativeFile}			 Opened file relative to ${workspaceFolder}
+    // ${relativeFileDirname}	  Opened file's dirname relative to ${workspaceFolder}
+    // ${fileBasename}			 Opened file's basename
+    // ${fileBasenameNoExtension}  Opened file's basename with no file extension
+    // ${fileExtname}			  Opened file's extension
+    // ${fileDirname}			  Opened file's folder path
+    // ${fileDirnameBasename}	  Opened file's folder name
+    // ${cwd}					  The task runner's CWD upon startup of VSCode
+    // ${lineNumber}			   Current selected line number in the active file
+    // ${selectedText}			 Current selected text in the active file
+    // ${execPath}				 Path to the running VSCode executable
+    // ${defaultBuildTask}		 Name of the default build task
+    // ${pathSeparator}			Path separator for the current OS
+    // ${/}						Path separator for the current OS (Alias)
+    
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+        "editor.rulers": [
+            {
+                "color": "#dbdee2",
+                "column": 100
+            },
+            {
+                "color": "#dbdee2",
+                "column": 85
+            }
+        ],
+        "terminal.integrated.persistentSessionReviveProcess": "never",
+        "terminal.integrated.defaultProfile.windows": "PowerShell",
+        "terminal.integrated.cwd": "${workspaceFolder}",
+        "powershell.cwd": "${fileWorkspaceFolder}",
+        "powershell.startAutomatically": false,
+        "powershell.scriptAnalysis.enable": true,
+        "powershell.integratedConsole.showOnStartup": false,
+        "powershell.integratedConsole.focusConsoleOnExecute": true,
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",<>/?",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.formatOnPaste": false,
+        "editor.formatOnType": false
+    }
+}
