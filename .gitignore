@@ -4,3 +4,4 @@ node_modules
 .DS_Store
 build/
 *.code-workspace
+/vscode-snippet-generator.code-workspace
