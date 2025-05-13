@@ -91,7 +91,7 @@ exports.activate = ({ subscriptions }) => {
       env.clipboard.writeText(`${snippetJSON},`)
 
       window.showInformationMessage(
-        'Snippet has been copied into the clipboard, please use the command "Snippets: Configure User Snippets" to paste it.',
+        'Snippet has been copied into the clipboard, please use the command "Snippets: Configure Snippets" to paste it.',
       )
     },
   )
