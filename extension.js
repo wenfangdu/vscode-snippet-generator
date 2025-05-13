@@ -3,7 +3,6 @@
 const { commands, window, workspace, env } = require('vscode')
 
 exports.activate = ({ subscriptions }) => {
-  // Retrieve the configuration value
   let doNotEscapeSpecialVariables = workspace
     .getConfiguration('snippet-generator')
     .get('doNotEscapeSpecialVariables')
