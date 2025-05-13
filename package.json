@@ -2,7 +2,7 @@
   "name": "snippet-generator",
   "displayName": "Snippet Generator",
   "description": "📜 Generate snippets from code in VSCode",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "wenfangdu",
   "icon": "images/icon.png",
   "license": "MIT",
@@ -57,7 +57,7 @@
         "snippet-generator.doNotEscapeSpecialVariables": {
           "type": "boolean",
           "default": true,
-          "description": "Do not escape special snippet variables that follow the syntax of '$name', '${name:somevalue}', or '$TM_SELECTED_TEXT'."
+          "description": "Do not escape special snippet variables that follow the syntax of `$name`, `${name:default}`, or `$TM_*`."
         }
       }
     }

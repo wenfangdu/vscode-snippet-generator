@@ -15,7 +15,11 @@ Command: `Generate Snippet`
 
 ## Settings
 
-`snippet-generator.doNotEscapeSpecialVariables`: Do not escape special snippet variables that follow the syntax of `$name`, `${name:somevalue}`, or `$TM_SELECTED_TEXT`. (`true` by default, thanks [@Jay](https://github.com/futuremotiondev))
+> `snippet-generator.doNotEscapeSpecialVariables` (`true` by default)
+
+Do not escape special snippet variables that follow the syntax of `$name`, `${name:default}`, or `$TM_*`.
+
+Thanks [@Jay](https://github.com/futuremotiondev).
 
 ## Inspired By
 
