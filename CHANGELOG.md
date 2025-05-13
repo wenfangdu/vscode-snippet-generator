@@ -1,4 +1,4 @@
-# Change Log for Snippet Generator
+# Changelog for Snippet Generator
 
 ## [ v0.3.9 ]
 
