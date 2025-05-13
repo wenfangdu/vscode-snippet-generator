@@ -13,6 +13,10 @@ Command: `Generate Snippet`
 
 ![Demo](https://raw.githubusercontent.com/wenfangdu/vscode-snippet-generator/main/images/demo.gif)
 
+## Settings
+
+`snippet-generator.doNotEscapeSpecialVariables`: Do not escape special snippet variables that follow the syntax of `$name`, `${name:somevalue}`, or `$TM_SELECTED_TEXT`. (`true` by default, thanks [@Jay](https://github.com/futuremotiondev))
+
 ## Inspired By
 
 - [Johnson Chu's comment](https://github.com/johnsoncodehk/volar/issues/183#issuecomment-842804053)
