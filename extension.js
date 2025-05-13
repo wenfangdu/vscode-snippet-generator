@@ -3,98 +3,98 @@
 const { commands, window, workspace, env } = require('vscode')
 
 exports.activate = ({ subscriptions }) => {
+  // Retrieve the configuration value
+  let doNotEscapeSpecialVariables = workspace
+    .getConfiguration('snippet-generator')
+    .get('doNotEscapeSpecialVariables')
 
-    // Retrieve the configuration value
-    let doNotEscapeSpecialVariables = workspace.getConfiguration('snippet-generator')
+  const respondToConfigChange = workspace.onDidChangeConfiguration(event => {
+    if (event.affectsConfiguration('snippet-generator')) {
+      doNotEscapeSpecialVariables = workspace
+        .getConfiguration('snippet-generator')
         .get('doNotEscapeSpecialVariables')
+    }
+  })
 
+  const generateSnippetCommand = commands.registerCommand(
+    'snippet-generator.generate-snippet',
+    async () => {
+      const editor = window.activeTextEditor
 
-    const respondToConfigChange = workspace.onDidChangeConfiguration(event => {
-        if (event.affectsConfiguration('snippet-generator')) {
-            doNotEscapeSpecialVariables = workspace
-                .getConfiguration('snippet-generator')
-                .get('doNotEscapeSpecialVariables')
-        }
-    })
+      if (!editor) {
+        return window.showErrorMessage('Error: No text editor is active')
+      }
 
-    const generateSnippetCommand = commands.registerCommand('snippet-generator.generate-snippet', async () => {
-        const editor = window.activeTextEditor
+      const selection = editor.document.getText(editor.selection)
 
-        if (!editor) {
-            return window.showErrorMessage('Error: No text editor is active')
-        }
+      if (!selection.length) {
+        return window.showErrorMessage('Error: No text is selected')
+      }
 
-        const selection = editor.document.getText(editor.selection)
+      const name = await window.showInputBox({
+        placeHolder: 'Please enter snippet name (required)',
+        validateInput: input => (input ? '' : 'Snippet Name is required'),
+      })
 
-        if (!selection.length) {
-            return window.showErrorMessage('Error: No text is selected')
-        }
+      if (name === undefined) {
+        return
+      }
 
-        const name = await window.showInputBox({
-            placeHolder: 'Please enter snippet name (required)',
-            validateInput: input => (input ? '' : 'Snippet Name is required'),
-        })
+      const scope = await window.showInputBox({
+        placeHolder: 'Please enter a scope (optional)',
+      })
 
-        if (name === undefined) {
-            return
-        }
+      if (scope === undefined) {
+        return
+      }
 
-        const scope = await window.showInputBox({
-            placeHolder: 'Please enter a scope (optional)',
-        })
+      const prefix = await window.showInputBox({
+        placeHolder: 'Please enter a prefix for intellisense (required)',
+        validateInput: input => (input ? '' : 'Snippet Prefix is required'),
+      })
 
-        if (scope === undefined) {
-            return
-        }
+      if (prefix === undefined) {
+        return
+      }
 
-        const prefix = await window.showInputBox({
-            placeHolder: 'Please enter a prefix for intellisense (required)',
-            validateInput: input => (input ? '' : 'Snippet Prefix is required'),
-        })
+      const description = await window.showInputBox({
+        placeHolder: 'Please enter a description (optional)',
+      })
 
-        if (prefix === undefined) {
-            return
-        }
+      if (description === undefined) {
+        return
+      }
 
-        const description = await window.showInputBox({
-            placeHolder: 'Please enter a description (optional)',
-        })
+      const tabSize = workspace.getConfiguration('editor').get('tabSize')
+      const spaces = new RegExp(` {${tabSize}}`, 'g')
 
-        if (description === undefined) {
-            return
-        }
+      let rePattern = /\$(?![\d{]|TM_)/g
+      if (doNotEscapeSpecialVariables === false) {
+        rePattern = /\$/g
+      }
 
-        const tabSize = workspace.getConfiguration('editor').get('tabSize')
-        const spaces = new RegExp(` {${tabSize}}`, 'g')
+      const snippetObj = {
+        [name]: {
+          ...(scope && { scope }),
+          prefix,
+          body: selection
+            .split(/\r?\n/)
+            .map(line => line.replace(rePattern, '\\$').replace(spaces, '\t')),
+          ...(description && { description }),
+        },
+      }
 
-        let rePattern = /\$(?![\d{]|TM_)/g
-        if (doNotEscapeSpecialVariables === false) {
-            rePattern = /\$/g
-        }
+      const snippetJSON = JSON.stringify(snippetObj, null, tabSize)
+        .split('\n')
+        .slice(1, -1)
+        .join('\n')
 
-        const snippetObj = {
-            [name]: {
-                ...(scope && { scope }),
-                prefix,
-                body: selection
-                    .split(/\r?\n/)
-                    .map(line => line.replace(rePattern, '\\$').replace(spaces, '\t')),
-                ...(description && { description }),
-            },
-        }
+      env.clipboard.writeText(`${snippetJSON},`)
 
-        const snippetJSON = JSON.stringify(snippetObj, null, tabSize)
-            .split('\n')
-            .slice(1, -1)
-            .join('\n')
+      window.showInformationMessage('Your snippet has been copied into the clipboard.')
+    },
+  )
 
-        env.clipboard.writeText(`${snippetJSON},`)
-
-        window.showInformationMessage(
-            'Your snippet has been copied into the clipboard.',
-        )
-    })
-
-    subscriptions.push(generateSnippetCommand)
-    subscriptions.push(respondToConfigChange)
+  subscriptions.push(generateSnippetCommand)
+  subscriptions.push(respondToConfigChange)
 }
