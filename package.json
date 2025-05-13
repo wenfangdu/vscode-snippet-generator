@@ -57,7 +57,7 @@
         "snippet-generator.doNotEscapeSpecialVariables": {
           "type": "boolean",
           "default": true,
-          "description": "Do not escape special snippet variables that follow the syntax of `$name`, `${name:default}`, or `$TM_*`."
+          "description": "Do not escape special snippet variables that follow the syntax of `$1`, `${1:label}`, or `$TM_*`."
         }
       }
     }
