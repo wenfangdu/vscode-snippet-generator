@@ -71,10 +71,7 @@ exports.activate = ({ subscriptions }) => {
 
       const spaces = new RegExp(` {${tabSize}}`, 'g')
 
-      let rePattern = /\$(?![\d{]|TM_)/g
-      if (doNotEscapeSpecialVariables === false) {
-        rePattern = /\$/g
-      }
+      const regex = doNotEscapeSpecialVariables ? /\$(?![\d{]|TM_)/g : /\$/g
 
       const snippetObj = {
         [name]: {
@@ -82,7 +79,7 @@ exports.activate = ({ subscriptions }) => {
           prefix,
           body: selection
             .split(/\r?\n/)
-            .map(line => line.replace(rePattern, '\\$').replace(spaces, '\t')),
+            .map(line => line.replace(regex, '\\$').replace(spaces, '\t')),
           ...(description && { description }),
         },
       }
