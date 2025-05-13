@@ -22,13 +22,15 @@ exports.activate = ({ subscriptions }) => {
       const editor = window.activeTextEditor
 
       if (!editor) {
-        return window.showErrorMessage('Error: No text editor is active')
+        window.showErrorMessage('Error: No text editor is active')
+        return
       }
 
       const selection = editor.document.getText(editor.selection)
 
       if (!selection.length) {
-        return window.showErrorMessage('Error: No text is selected')
+        window.showErrorMessage('Error: No text is selected')
+        return
       }
 
       const name = await window.showInputBox({
@@ -66,6 +68,7 @@ exports.activate = ({ subscriptions }) => {
       }
 
       const tabSize = workspace.getConfiguration('editor').get('tabSize')
+
       const spaces = new RegExp(` {${tabSize}}`, 'g')
 
       let rePattern = /\$(?![\d{]|TM_)/g
