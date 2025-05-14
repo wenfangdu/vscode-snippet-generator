@@ -19,7 +19,7 @@ Command: `Generate Snippet`
 
 Do not escape special snippet variables that follow the syntax of `$1`, `${1:label}`, or `$TM_*`.
 
-Thanks [@Jay](https://github.com/futuremotiondev).
+Thanks [@Jay](https://github.com/wenfangdu/vscode-snippet-generator/pull/16).
 
 ## Inspired By
 
