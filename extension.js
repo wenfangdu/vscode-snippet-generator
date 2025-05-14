@@ -21,20 +21,20 @@ exports.activate = ({ subscriptions }) => {
       const editor = window.activeTextEditor
 
       if (!editor) {
-        window.showErrorMessage('Error: No text editor is active')
+        window.showErrorMessage('No text editor is active.')
         return
       }
 
       const selection = editor.document.getText(editor.selection)
 
       if (!selection.length) {
-        window.showErrorMessage('Error: No text is selected')
+        window.showErrorMessage('No text is selected.')
         return
       }
 
       const name = await window.showInputBox({
         placeHolder: 'Please enter snippet name (required)',
-        validateInput: input => (input ? '' : 'Snippet Name is required'),
+        validateInput: input => (input ? '' : 'Snippet name is required'),
       })
 
       if (name === undefined) {
@@ -51,7 +51,7 @@ exports.activate = ({ subscriptions }) => {
 
       const prefix = await window.showInputBox({
         placeHolder: 'Please enter a prefix for intellisense (required)',
-        validateInput: input => (input ? '' : 'Snippet Prefix is required'),
+        validateInput: input => (input ? '' : 'Snippet prefix is required'),
       })
 
       if (prefix === undefined) {
